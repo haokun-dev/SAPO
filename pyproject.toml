@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sapo-core"
+version = "0.1.0"
+description = "SAPO core policy and sparse attention operators"
+readme = "README.md"
+license = {text = "All rights reserved"}
+requires-python = ">=3.10"
+dependencies = ["torch>=2.3,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+sapo-core-demo = "sapo_core.demo:main"
+
+[tool.setuptools.packages.find]
+include = ["sapo_core*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.urls]
+Repository = "https://github.com/haokun-dev/SAPO"
+Issues = "https://github.com/haokun-dev/SAPO/issues"
